@@ -1,6 +1,8 @@
 package com.github.felipectrevisol.todo.task;
 
-public class TaskCard implements Comparable<TaskCard> {
+import org.springframework.context.ApplicationEvent;
+
+public class TaskCard extends ApplicationEvent implements Comparable<TaskCard> {
 
     private boolean completed;
     private final String title;
@@ -23,6 +25,7 @@ public class TaskCard implements Comparable<TaskCard> {
     }
 
     public TaskCard(final String title, final int priority) {
+        super(TaskCard.class);
         this.title = title;
         this.priority = priority;
     }
