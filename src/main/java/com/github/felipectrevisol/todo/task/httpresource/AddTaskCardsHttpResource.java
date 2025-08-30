@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/task")
-public class AddTaskCarsHttpResource {
+@RequestMapping("/api/v1/task")
+public class AddTaskCardsHttpResource {
 
     private TaskCardAdder adder;
 
-    public AddTaskCarsHttpResource(final TaskCardAdder adder) {
+    public AddTaskCardsHttpResource(final TaskCardAdder adder) {
         this.adder = adder;
     }
     
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void post(@RequestBody HttpBody httpBody) {
-        this.adder.add(new com.github.felipectrevisol.todo.task.TaskCard(httpBody.title(), httpBody.priority()));
+        this.adder.add(httpBody.payload());
     }
 }

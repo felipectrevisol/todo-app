@@ -2,9 +2,7 @@ package com.github.felipectrevisol.todo;
 
 import java.util.Iterator;
 import org.junit.jupiter.api.Test;
-
 import com.github.felipectrevisol.todo.task.TaskCard;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TodoTest {

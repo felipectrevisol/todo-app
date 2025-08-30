@@ -1,3 +1,9 @@
 package com.github.felipectrevisol.todo.task.httpresource;
 
-public record HttpBody(String title, int priority) {}
+import com.github.felipectrevisol.todo.task.TaskCard;
+
+record HttpBody(String title, int priority) {
+    final TaskCard payload() {
+        return new TaskCard(title, priority);
+    }
+}
